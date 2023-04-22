@@ -1,0 +1,58 @@
+<div class="container">
+    <form [formGroup]="userlogin" >
+        <h5 class="text-uppercase text-center" id="h5">Registion Form</h5>
+         
+       <div>
+        
+       
+         <mat-form-field appearance="outline">
+           <mat-label>Enter Your Name</mat-label>
+           <input matInput placeholder="Enter Your Name" formControlName="name">
+           <mat-icon matSuffix>person</mat-icon>
+         </mat-form-field>
+       
+         <div id="error" *ngIf="userlogin.controls['name'].errors && userlogin.controls['name'].touched">
+           <mat-error *ngIf="name?.hasError('required')" class="small">Email is required</mat-error>
+           <mat-error *ngIf="name?.hasError('pattern')" class="small">Email is Incorrect</mat-error>
+         </div>
+       </div>
+       
+       <div>
+        
+         <mat-form-field appearance="outline" >
+           <mat-label>Enter Email Address</mat-label>
+           <input matInput placeholder="Enter Email Address" formControlName="email">
+           <mat-icon matSuffix>email</mat-icon>
+         </mat-form-field>
+       
+         <div id="error" *ngIf="userlogin.controls['email'].errors && userlogin.controls['email'].touched">
+           <mat-error *ngIf="email?.hasError('required')" class="small">Email is required</mat-error>
+           <mat-error *ngIf="email?.hasError('pattern')" class="small">Email is Incorrect</mat-error>
+         </div>
+         
+           
+       </div>
+       <div>
+        
+         <mat-form-field appearance="outline">
+             <mat-label>Enter Password</mat-label>
+             <input matInput placeholder="**********" [type]="hide ? 'password' : 'text'" formControlName="password">
+             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+             </button>
+         
+         </mat-form-field>
+       
+         <div id="error" *ngIf="userlogin.controls['password'].errors && userlogin.controls['password'].touched">
+           <mat-error *ngIf="password?.hasError('required')" class="small">Password is required</mat-error>
+           <mat-error *ngIf="password?.hasError('pattern')" class="small">Password is Incorrect</mat-error>
+         </div>
+       
+       
+         
+       </div>  
+       
+           <button mat-raised-button color="primary" id="button" [disabled]="userlogin.invalid" (click)="userSubmit()">GET STARTED</button>  
+         
+         </form>
+</div>

@@ -1,0 +1,26 @@
+{
+  "user": [
+    {
+      "name": "Tushar",
+      "email": "tushar@gmail.com",
+      "password": "Tushar@123",
+      "id": 1
+    },
+    {
+      "name": "Suraj",
+      "email": "suraj@gmail.com",
+      "password": "Suraj@123",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
